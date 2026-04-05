@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class 11/12 NEET-JEE Topic Question Bank</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <h1>NEET / JEE Topic Question Bank</h1>
+      <p>
+        Enter your topic to get all available practice questions for Class 11 and 12 students (Medical and Non-Medical streams).
+      </p>
+    </header>
+
+    <section class="card">
+      <form id="questionForm" novalidate>
+        <div class="grid">
+          <label for="studentClass">Class</label>
+          <select id="studentClass" required>
+            <option value="">Select class</option>
+            <option value="11">Class 11</option>
+            <option value="12">Class 12</option>
+          </select>
+
+          <label for="stream">Stream</label>
+          <select id="stream" required>
+            <option value="">Select stream</option>
+            <option value="medical">Medical (PCB)</option>
+            <option value="non-medical">Non-Medical (PCM)</option>
+          </select>
+
+          <label for="exam">Exam</label>
+          <select id="exam" required>
+            <option value="">Select exam</option>
+            <option value="neet">NEET</option>
+            <option value="jee">JEE</option>
+          </select>
+
+          <label for="subject">Subject</label>
+          <select id="subject" required>
+            <option value="">Select subject</option>
+          </select>
+
+          <label for="topic">Topic</label>
+          <input
+            id="topic"
+            type="text"
+            placeholder="e.g. Electrostatics, Genetics, Thermodynamics"
+            minlength="2"
+            required
+          />
+        </div>
+
+        <div class="actions">
+          <button type="submit">Search Questions</button>
+          <button id="clearBtn" type="button" class="secondary">Clear</button>
+        </div>
+
+        <p class="helper">
+          Tip: You can type part of a topic name (for example, "electro" will match "Electrostatics").
+        </p>
+        <p id="formError" class="error hidden" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="resultSection" class="card hidden" aria-live="polite">
+      <div class="resultHeader">
+        <h2>Question Results</h2>
+        <p id="summary"></p>
+      </div>
+      <ol id="questionsList"></ol>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
